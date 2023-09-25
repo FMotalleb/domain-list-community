@@ -8,8 +8,8 @@ This project is not opinionated. In other words, it does NOT endorse, claim or i
 
 ## Download links
 
-- **dlc.dat**：[https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat](https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat)
-- **dlc.dat.sha256sum**：[https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat.sha256sum](https://github.com/v2fly/domain-list-community/releases/latest/download/dlc.dat.sha256sum)
+- **geosite.dat**：[https://github.com/v2fly/domain-list-community/releases/latest/download/geosite.dat](https://github.com/v2fly/domain-list-community/releases/latest/download/geosite.dat)
+- **geosite.dat.sha256sum**：[https://github.com/v2fly/domain-list-community/releases/latest/download/geosite.dat.sha256sum](https://github.com/v2fly/domain-list-community/releases/latest/download/geosite.dat.sha256sum)
 
 ## Usage example
 
@@ -65,13 +65,13 @@ Each file in the `data` directory can be used as a rule in this format: `geosite
 }
 ```
 
-## Generate `dlc.dat` manually
+## Generate `geosite.dat` manually
 
 - Install `golang` and `git`
 - Clone project code: `git clone https://github.com/v2fly/domain-list-community.git`
 - Navigate to project root directory: `cd domain-list-community`
 - Install project dependencies: `go mod download`
-- Generate `dlc.dat` (without `datapath` option means to use domain lists in `data` directory of current working directory):
+- Generate `geosite.dat` (without `datapath` option means to use domain lists in `data` directory of current working directory):
   - `go run ./`
   - `go run ./ --datapath=/path/to/your/custom/data/directory`
 
@@ -94,13 +94,13 @@ full:www.google.com
 
 > The following types of rules are **NOT** fully compatible with the ones that defined by user in V2Ray config file. Do **Not** copy and paste directly.
 
-* Comment begins with `#`. It may begin anywhere in the file. The content in the line after `#` is treated as comment and ignored in production.
-* Inclusion begins with `include:`, followed by the file name of an existing file in the same directory.
-* Subdomain begins with `domain:`, followed by a valid domain name. The prefix `domain:` may be omitted.
-* Keyword begins with `keyword:`, followed by a string.
-* Regular expression begins with `regexp:`, followed by a valid regular expression (per Golang's standard).
-* Full domain begins with `full:`, followed by a complete and valid domain name.
-* Domains (including `domain`, `keyword`, `regexp` and `full`) may have one or more attributes. Each attribute begins with `@` and followed by the name of the attribute.
+- Comment begins with `#`. It may begin anywhere in the file. The content in the line after `#` is treated as comment and ignored in production.
+- Inclusion begins with `include:`, followed by the file name of an existing file in the same directory.
+- Subdomain begins with `domain:`, followed by a valid domain name. The prefix `domain:` may be omitted.
+- Keyword begins with `keyword:`, followed by a string.
+- Regular expression begins with `regexp:`, followed by a valid regular expression (per Golang's standard).
+- Full domain begins with `full:`, followed by a complete and valid domain name.
+- Domains (including `domain`, `keyword`, `regexp` and `full`) may have one or more attributes. Each attribute begins with `@` and followed by the name of the attribute.
 
 ## How it works
 
@@ -128,8 +128,8 @@ Attribute is useful for sub-group of domains, especially for filtering purpose. 
 
 ## Contribution guideline
 
-* Fork this repo, make modifications to your own repo, file a PR.
-* Please begin with small size PRs, say modification in a single file.
-* A PR must be reviewed and approved by another member.
-* A script will verify your pull request to test whether your PR is correct or not every time you update the PR. Only the PR which passes the test will be merged. Please go to the Action label to get detailed information if you didn't pass it. We also provide the file which has been generated to make you test.
-* After a few successful PRs, you may apply for manager access to this repository.
+- Fork this repo, make modifications to your own repo, file a PR.
+- Please begin with small size PRs, say modification in a single file.
+- A PR must be reviewed and approved by another member.
+- A script will verify your pull request to test whether your PR is correct or not every time you update the PR. Only the PR which passes the test will be merged. Please go to the Action label to get detailed information if you didn't pass it. We also provide the file which has been generated to make you test.
+- After a few successful PRs, you may apply for manager access to this repository.
